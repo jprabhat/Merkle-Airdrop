@@ -36,16 +36,15 @@ contract MerkleAirdropTest is ZkSyncChainChecker, Test {
 
         (user, userPrivKey) = makeAddrAndKey("user");
         gasPayer = makeAddr("gasPayer");
-
     }
 
     function testUsersCanClaim() public {
         uint256 startingBalance = token.balanceOf(user);
-        bytes32 digest = airdrop.getMessageHash(user,AMOUNT_TO_CLAIM);
-        (uint8 v, bytes32 r, bytes32 s) = vm.sign(userPrivKey,digest);
+        bytes32 digest = airdrop.getMessageHash(user, AMOUNT_TO_CLAIM);
+        (uint8 v, bytes32 r, bytes32 s) = vm.sign(userPrivKey, digest);
 
         vm.prank(gasPayer);
-        airdrop.claim(user, AMOUNT_TO_CLAIM, PROOF,v,r,s);
+        airdrop.claim(user, AMOUNT_TO_CLAIM, PROOF, v, r, s);
 
         uint256 endingBalance = token.balanceOf(user);
         console.log("Ending Balance", endingBalance);
