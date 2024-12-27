@@ -1,14 +1,38 @@
-## Foundry
+# Merkle Airdrop Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Welcome to the Merkle Airdrop Project! This repository contains Solidity smart contracts and supporting scripts for implementing efficient and secure airdrop mechanisms on the Ethereum blockchain. Leveraging Merkle Trees, cryptographic signatures, and Foundry for testing and deployment, this project is ideal for developers exploring blockchain-based airdrop solutions.
 
-Foundry consists of:
+## Key Features
+- **Efficient Airdrops**: Utilize Merkle Trees to verify data inclusion in a large dataset without iterating through all elements.
+- **Cryptographic Signatures**: Ensure transaction authenticity and integrity using `vm.sign`, `cast wallet sign`, and OpenZeppelin's `ECDSA` library.
+- **Multi-Platform Deployment**: Scripts for deploying and interacting with smart contracts on platforms like Anvil, ZKsync local node, and ZKsync Sepolia.
+- **Comprehensive Testing**: Includes unit tests to validate contract functionality and security mechanisms.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Project Structure
+- **Contracts**: Solidity files for implementing Merkle Tree-based verification, cryptographic signatures, and airdrop logic.
+- **Scripts**: Deployment and interaction scripts for Ethereum testnets and local environments.
+- **Tests**: Unit tests and invariant checks to ensure contract reliability and efficiency.
 
+## Getting Started
+
+### Prerequisites
+- **Foundry**: Ensure Foundry is installed. If not, install it by running:
+   ```bash
+   curl -L https://foundry.paradigm.xyz | bash
+   foundryup
+
+### Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/jprabhat/Merkle-Airdrop.git
+   cd Merkle-Airdrop
+
+2. **Run Project**:
+    ```bash
+    make install
+    make build
+    make test
+    
 ## Documentation
 
 https://book.getfoundry.sh/
